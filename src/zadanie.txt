@@ -1,0 +1,18 @@
+Zad. 1. [4p] Dla poniższej sygnatury zdefiniować w OCaml moduł obsługujący kolejkę nieskończoną
+reprezentowaną przez typ type 'a tk= KolejkaPusta | Skladowa of 'a * 'a tk.
+Pokazać przykład działania każdej funkcji modułu.
+
+module type OBSLUGA_KOLEJKI =
+sig
+  type 'a tk
+  exception Pusta of string
+  val tworz_pusta: unit -> 'a tk
+  val do_kolejki: 'a * 'a tk -> 'a tk
+  val z_kolejki: 'a tk -> 'a tk
+  val pierwszy_element: 'a tk -> 'a
+  val kolejka_pusta: 'a tk -> bool
+end;;
+
+Zad. 2. [2+2+1+1p] Zdefiniować w OCaml w stylu funkcyjnym wykorzystującą rekurencję ogonową
+funkcję typu int array array -> int array wyznaczającą sumę elementów w każdym wierszu macierzy prostokątnej.
+Napisać następnie tą samą funkcję w stylu imperatywnym. Na koniec wykonać te same zadania w Scala.
